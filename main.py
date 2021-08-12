@@ -7,12 +7,13 @@ from button import Button
 from bean import Bean
 from utils import clamp
 from utils import checkCollisions
+#from renderer import *
 
 def main():
 	pygame.init()
 
 	# set the display
-	DISPLAY = pygame.display.set_mode((640, 480), 0, 32)
+	DISPLAY = pygame.display.set_mode((640, 480), pygame.RESIZABLE | pygame.SCALED, 32) # DO NOT change the window size!
 	pygame.display.set_caption('Flappuccino')
 	pygame.display.set_icon(Bean().sprite)
 
@@ -160,13 +161,13 @@ def main():
 		keys = pygame.key.get_pressed()
 		# get events
 		for event in pygame.event.get():
-			if event.type==pygame.KEYDOWN and event.key == K_SPACE: # If Space pressed set jump = True
+			if event.type == pygame.KEYDOWN and event.key == K_SPACE: # If Space pressed set jump = True
 				jump = True
 			if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1: # If mousebutton pressed set jump = True
 				clicked = True
 			if clicked and mouseY < DISPLAY.get_height() - 90:
 				jump = True
-			if event.type==QUIT:
+			if event.type == QUIT:
 				pygame.quit()
 				sys.exit()
 		
@@ -174,11 +175,11 @@ def main():
 		
 		DISPLAY.fill(WHITE)
 		for o in bg:
-			o.setSprite(((player.position.y/50) % 100) / 100)
+			o.setSprite(((player.position.y / 50) % 100) / 100)
 			DISPLAY.blit(o.sprite, (0, o.position))
 
 		color = colorsys.hsv_to_rgb(((player.position.y / 50) % 100) / 100, 0.5, 0.5)
-		currentHeightMarker = font.render(str(height), True, (color[0] * 255, color[1] * 255, color[2] * 255, 50 ))
+		currentHeightMarker = font.render(str(height), True, (color[0] * 255, color[1] * 255, color[2] * 255, 50))
 		DISPLAY.blit(currentHeightMarker, (DISPLAY.get_width() / 2 - currentHeightMarker.get_width() / 2, camOffset + round((player.position.y - startingHeight) / DISPLAY.get_height()) * DISPLAY.get_height() + player.currentSprite.get_height() - 40))
 		
 		for bean in beans:
