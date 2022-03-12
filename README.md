@@ -1,6 +1,8 @@
 # Flappuccino
 
 Flappuccino is a game created in 48 hours for the [PyGame Community New Years Jam](https://itch.io/jam/pygame-community-jam) using Python with [Pygame](https://www.pygame.org). 
+FlappuccinoX is a continuation of Flappuccino, a game created by PolyMars.
+
 ## Screenshots
 ![](https://img.itch.zone/aW1hZ2UvODg3MDQ0LzUwMDQzOTkuZ2lm/original/vd0wHu.gif) 
 
