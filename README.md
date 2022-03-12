@@ -7,7 +7,8 @@ FlappuccinoX is a continuation of Flappuccino, a game created by PolyMars.
 ![](https://img.itch.zone/aW1hZ2UvODg3MDQ0LzUwMDQzOTkuZ2lm/original/vd0wHu.gif) 
 
 ## Background
-Information on how to play is available on the game's [itch.io page](https://polymars.itch.io/flappuccino).
+Information on how to play is available on the original 
+game's [itch.io page](https://polymars.itch.io/flappuccino).
 
 ## Usage
 ### Releases
